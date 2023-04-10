@@ -24,6 +24,9 @@ if test -e $writefile
 then
     echo $writestr > $writefile
 else
+    #Retrive write file directory from filename
+    writefiledir=${writefile%%.*}
+    mkdir -p "$writefiledir"
     touch $writefile
     if test -e $writefile
     then
